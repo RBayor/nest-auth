@@ -1,17 +1,34 @@
 
 ### Create a new user
-
 POST http://localhost:3000/auth/signup HTTP/1.1
 content-type: application/json
 
 {
-    "email": "test@tesst.com",
+    "email": "a@a.com",
+    "password":"1234567"
+}
+
+### Sign in user
+POST http://localhost:3000/auth/signin HTTP/1.1
+content-type: application/json
+
+{
+    "email": "a@a.com",
     "password":"1234567"
 }
 
 
-### Get a particular user
+### Get Current user
+GET  http://localhost:3000/auth/whoami HTTP/1.1
+content-type: application/json
 
+
+### Sign out
+POST   http://localhost:3000/auth/signout HTTP/1.1
+content-type: application/json
+
+
+### Get a particular user
 GET  http://localhost:3000/auth/5 HTTP/1.1
 content-type: application/json
 
@@ -26,8 +43,9 @@ DELETE  http://localhost:3000/auth/1 HTTP/1.1
 content-type: application/json
 
 
-###  Patch User with given id
+###  Update User with given id
 PATCH http://localhost:3000/auth/3 HTTP/1.1
 content-type: application/json
 
 {"email":"aaaa@aaaa.com"}
+
